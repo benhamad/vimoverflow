@@ -38,7 +38,7 @@ Result :
     set hlsearch!  
     nnoremap <F3> :set hlsearch!<CR>
 
-# dependencies
+## dependencies
 
     $ pip install requests
     $ pip install beautifulsoup4   
