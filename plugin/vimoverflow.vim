@@ -1,33 +1,30 @@
 function! VimOverflow(arg)
 python << _EOF_
 
-import requests
 import vim
 from bs4 import BeautifulSoup
+import re
+from pyquery import PyQuery as pq
+import requests
 
-base_url = 'https://api.stackexchange.com/2.2/'
-search_url = 'search?order=desc&sort=activity&intitle={}&site=stackoverflow'
-question_url = 'https://stackoverflow.com/q/'
 
-def extract_answer(question_id):
-    question = requests.get(question_url + str(question_id))
+def search_question(query):
+    r = requests.get("http://www.google.com/search?q=site:stackoverflow.com+{}".format(query))
+    html = pq(r.text)
+    google_url =  [a.attrib['href'] for a in html('.r')('a')][0]
+    return re.search("q=(.*?)&", google_url).group(1)
+
+def extract_answer(question_url):
+    question = requests.get(question_url)
     soup = BeautifulSoup(question.text, 'html.parser')
     answers  = soup.findAll('div', {'class' : 'post-text'})
     return answers[1].text 
 
-def search_answer(query):
-    try : 
-        r = requests.get(base_url + search_url.format(query))
-    except: 
-        return "Error while connecting"
-    json_response = r.json()
-    try:
-        question_id =  json_response["items"][0]["question_id"]
-    except:
-        return "I didn't find a answer"
-    return extract_answer(question_id)
+def get_answer(query):
+    question_url = search_question(query)
+    return extract_answer(question_url)
 
-print search_answer(vim.eval("a:arg"))
+print get_answer(vim.eval("a:arg"))
 
 _EOF_
 endfunction
