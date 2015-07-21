@@ -24,6 +24,11 @@ type:
 
 The plugin will search it for you and show you the accepted answer.
 
+# dependencies
+
+    $ pip install requests
+    $ pip install beautifulsoup4   
+
 #### Example:
 
     :VimOverflow clear last search highlighting
