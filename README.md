@@ -24,11 +24,6 @@ type:
 
 The plugin will search it for you and show you the accepted answer.
 
-# dependencies
-
-    $ pip install requests
-    $ pip install beautifulsoup4   
-
 #### Example:
 
     :VimOverflow clear last search highlighting
@@ -42,6 +37,12 @@ Result :
     Or, to toggle it: 
     set hlsearch!  
     nnoremap <F3> :set hlsearch!<CR>
+
+# dependencies
+
+    $ pip install requests
+    $ pip install beautifulsoup4   
+
 
 
 ## Todo list:
