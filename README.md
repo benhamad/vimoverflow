@@ -46,7 +46,7 @@ Result :
 
 
 ## Todo list:
-- Using google for search instead of Stackexchange api.
+- ~~Using google for search instead of Stackexchange api.~~
 
 ## License 
 Copyright © Chaker Benhamed. Distributed under the same terms as Vim itself. See :help
