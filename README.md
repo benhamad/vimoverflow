@@ -12,17 +12,18 @@
 
 ## Introduction: 
 
-If you're programmer, coder or a hacker and you don't know what
-[stackoverflow](http://stackoverflow.com) is! Than I suggest that you look for
-another carrer. Else I hope that this plugin save you some time.
+	If you're a programmer, coder or a hacker and you don't know what
+	[stackoverflow](http://stackoverflow.com) is,
+		 then I suggest that you look for another career. 
+	Else I hope that this plugin will save you time.
 
 ## How it works: 
 
 type: 
 
-    :VimOverflow your fancy question
+    :VimOverflow your_fancy_question
 
-The plugin will search it for you and show you the accepted answer.
+The plugin will search the question for you and show you the most suitable  answer.
 
 #### Example:
 
